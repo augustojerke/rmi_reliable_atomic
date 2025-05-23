@@ -1,0 +1,4 @@
+2025-05-23 10:50:34,055 - Sequencer - INFO - Sequencer listening on ('localhost', 6000)
+2025-05-23 10:52:03,055 - Sequencer - INFO - Sequenced message {'sender': 'node2', 'content': 'teste', 'sequence': 1}
+2025-05-23 10:52:07,893 - Sequencer - INFO - Sequenced message {'sender': 'node3', 'content': 'gremio', 'sequence': 2}
+2025-05-23 10:52:23,551 - Sequencer - INFO - Sequenced message {'sender': 'node3', 'content': 'jug', 'sequence': 3}

@@ -1,47 +1,49 @@
 import socket
 import threading
 import json
+from config import NODES, SEQUENCER
+from log_config import setup_logger
 
-HOST = 'localhost'
-PORT = 6000
+logger = setup_logger("Sequencer")
 
-message_counter = 0
-lock = threading.Lock()
-clients = []
+sequence_number = 0
 
-def handle_client(conn, addr):
-    global message_counter
-    print(f"[Sequencer] Connected by {addr}")
+def handle_connection(conn):
+    global sequence_number
+    try:
+        data = conn.recv(1024).decode()
+        message = json.loads(data)
+        sequence_number += 1
+        message['sequence'] = sequence_number
+
+        logger.info(f"Sequenced message {message}")
+
+        for node_name, (host, port) in NODES.items():
+            send_to_node(host, port, message)
+
+    except Exception as e:
+        logger.error(f"Error handling connection: {e}")
+    finally:
+        conn.close()
+
+def send_to_node(host, port, message):
+    try:
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            s.connect((host, port))
+            s.sendall(json.dumps(message).encode())
+    except Exception as e:
+        logger.error(f"Failed to send to {host}:{port} - {e}")
+
+def start_sequencer():
+    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server.bind(SEQUENCER)
+    server.listen()
+
+    logger.info(f"Sequencer listening on {SEQUENCER}")
+
     while True:
-        try:
-            data = conn.recv(1024)
-            if not data:
-                break
-            message = json.loads(data.decode())
-            with lock:
-                message_counter += 1
-                message['sequence'] = message_counter
-            broadcast(message)
-        except:
-            break
-    conn.close()
-
-def broadcast(message):
-    for client in clients:
-        try:
-            client.sendall(json.dumps(message).encode())
-        except:
-            pass
-
-def main():
-    print("[Sequencer] Starting...")
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.bind((HOST, PORT))
-        s.listen()
-        while True:
-            conn, addr = s.accept()
-            clients.append(conn)
-            threading.Thread(target=handle_client, args=(conn, addr), daemon=True).start()
+        conn, _ = server.accept()
+        threading.Thread(target=handle_connection, args=(conn,)).start()
 
 if __name__ == "__main__":
-    main()
+    start_sequencer()

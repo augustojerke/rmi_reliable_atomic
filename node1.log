@@ -1,0 +1,26 @@
+2025-05-23 10:51:01,204 - node1 - INFO - node1 listening on localhost:5001
+2025-05-23 10:51:05,228 - node1 - ERROR - Node node2 may be down
+2025-05-23 10:51:09,240 - node1 - ERROR - Node node3 may be down
+2025-05-23 10:51:18,264 - node1 - ERROR - Node node2 may be down
+2025-05-23 10:51:22,278 - node1 - ERROR - Node node3 may be down
+2025-05-23 10:51:29,311 - node1 - INFO - Heartbeat OK with node2
+2025-05-23 10:51:32,354 - node1 - INFO - Heartbeat OK with node3
+2025-05-23 10:51:39,380 - node1 - INFO - Heartbeat OK with node2
+2025-05-23 10:51:41,403 - node1 - INFO - Heartbeat OK with node3
+2025-05-23 10:51:48,446 - node1 - INFO - Heartbeat OK with node2
+2025-05-23 10:51:50,475 - node1 - INFO - Heartbeat OK with node3
+2025-05-23 10:51:57,504 - node1 - INFO - Heartbeat OK with node2
+2025-05-23 10:51:59,535 - node1 - INFO - Heartbeat OK with node3
+2025-05-23 10:52:03,056 - node1 - INFO - Delivered: {'sender': 'node2', 'content': 'teste', 'sequence': 1}
+2025-05-23 10:52:06,569 - node1 - INFO - Heartbeat OK with node2
+2025-05-23 10:52:07,893 - node1 - WARNING - Simulating message loss
+2025-05-23 10:52:08,601 - node1 - INFO - Heartbeat OK with node3
+2025-05-23 10:52:15,630 - node1 - INFO - Heartbeat OK with node2
+2025-05-23 10:52:17,654 - node1 - INFO - Heartbeat OK with node3
+2025-05-23 10:52:23,551 - node1 - INFO - Delivered: {'sender': 'node3', 'content': 'jug', 'sequence': 3}
+2025-05-23 10:52:24,686 - node1 - INFO - Heartbeat OK with node2
+2025-05-23 10:52:26,724 - node1 - INFO - Heartbeat OK with node3
+2025-05-23 10:52:33,758 - node1 - INFO - Heartbeat OK with node2
+2025-05-23 10:52:35,787 - node1 - INFO - Heartbeat OK with node3
+2025-05-23 10:52:44,810 - node1 - ERROR - Node node2 may be down
+2025-05-23 10:52:46,817 - node1 - INFO - Heartbeat OK with node3

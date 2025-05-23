@@ -1,0 +1,22 @@
+2025-05-23 10:51:32,280 - node3 - INFO - node3 listening on localhost:5003
+2025-05-23 10:51:34,302 - node3 - INFO - Heartbeat OK with node1
+2025-05-23 10:51:36,323 - node3 - INFO - Heartbeat OK with node2
+2025-05-23 10:51:43,354 - node3 - INFO - Heartbeat OK with node1
+2025-05-23 10:51:45,379 - node3 - INFO - Heartbeat OK with node2
+2025-05-23 10:51:52,424 - node3 - INFO - Heartbeat OK with node1
+2025-05-23 10:51:54,460 - node3 - INFO - Heartbeat OK with node2
+2025-05-23 10:52:01,486 - node3 - INFO - Heartbeat OK with node1
+2025-05-23 10:52:03,056 - node3 - INFO - Delivered: {'sender': 'node2', 'content': 'teste', 'sequence': 1}
+2025-05-23 10:52:03,523 - node3 - INFO - Heartbeat OK with node2
+2025-05-23 10:52:07,893 - node3 - INFO - Sent broadcast: gremio
+2025-05-23 10:52:07,893 - node3 - INFO - Delivered: {'sender': 'node3', 'content': 'gremio', 'sequence': 2}
+2025-05-23 10:52:10,558 - node3 - INFO - Heartbeat OK with node1
+2025-05-23 10:52:12,588 - node3 - INFO - Heartbeat OK with node2
+2025-05-23 10:52:19,632 - node3 - INFO - Heartbeat OK with node1
+2025-05-23 10:52:21,652 - node3 - INFO - Heartbeat OK with node2
+2025-05-23 10:52:23,551 - node3 - INFO - Sent broadcast: jug
+2025-05-23 10:52:23,551 - node3 - INFO - Delivered: {'sender': 'node3', 'content': 'jug', 'sequence': 3}
+2025-05-23 10:52:28,690 - node3 - INFO - Heartbeat OK with node1
+2025-05-23 10:52:30,727 - node3 - INFO - Heartbeat OK with node2
+2025-05-23 10:52:37,755 - node3 - INFO - Heartbeat OK with node1
+2025-05-23 10:52:41,774 - node3 - ERROR - Node node2 may be down

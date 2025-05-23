@@ -1,8 +1,0 @@
-{
-  "nodes": {
-    "node1": ["localhost", 5001],
-    "node2": ["localhost", 5002],
-    "node3": ["localhost", 5003]
-  },
-  "sequencer": ["localhost", 6000]
-}
